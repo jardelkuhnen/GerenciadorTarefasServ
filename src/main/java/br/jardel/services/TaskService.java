@@ -20,7 +20,9 @@ public class TaskService {
 	}
 
 	public void save(Tarefa task) {
-		taskRepository.save(task);
+		if(task != null && task.getNome() != null) {
+			taskRepository.save(task);
+		}	
 	}
 
 	public void delete(Long id) {
