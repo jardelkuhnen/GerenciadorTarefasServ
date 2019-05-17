@@ -33,5 +33,14 @@ public class TaskService {
 			taskRepository.delete(task.get());
 		}
 	}
+
+	public Tarefa loadById(Long id) {
+		Optional<Tarefa> task = taskRepository.findById(id);
+		return task.get();
+	}
+
+	public void update(Tarefa task) {
+		taskRepository.save(task);
+	}
 	
 }
